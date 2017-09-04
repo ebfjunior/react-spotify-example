@@ -1,0 +1,40 @@
+.artist-info {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px; }
+
+.grabr_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  transition: all 300ms ease-in-out; }
+
+.grabr_content .grabr_datalist {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0 15px;
+  border-top: none;
+  max-height: 300px;
+  overflow: scroll;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 100;
+  transition: all 100ms ease-in-out; }
+  .grabr_content .grabr_datalist > li {
+    list-style: none;
+    border-top: 1px solid #eee;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    background: #fff;
+    padding: 5px; }
+    .grabr_content .grabr_datalist > li > img {
+      margin-right: 20px; }
+    .grabr_content .grabr_datalist > li:hover {
+      background: #f3f3f3; }

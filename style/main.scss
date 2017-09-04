@@ -1,3 +1,21 @@
+.artist-info{
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.albuns-list{
+    margin-top: 20px;
+
+    .album-item{
+        background: #f1f1f1;
+        border: 1px solid #e3e3e3;
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
 .grabr_overlay{
     position: fixed;
     top: 0;
@@ -21,6 +39,7 @@
         border: 1px solid #ccc;
         border-top: none;
         z-index: 100;
+        transition: all 100ms ease-in-out;
         
         & > li{
             list-style: none;
