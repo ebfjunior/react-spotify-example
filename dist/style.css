@@ -4,6 +4,29 @@
   border-radius: 5px;
   padding: 15px; }
 
+.albuns-list {
+  margin-top: 20px; }
+  .albuns-list .album-item {
+    background: #f1f1f1;
+    border: 1px solid #e3e3e3;
+    padding: 10px;
+    margin: 10px 0; }
+    .albuns-list .album-item .album-name {
+      font-weight: bold;
+      margin-top: 5px;
+      min-height: 80px; }
+    .albuns-list .album-item .image-container {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 100%; }
+      .albuns-list .album-item .image-container > img {
+        position: absolute;
+        max-width: 95%;
+        max-height: 95%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%); }
+
 .grabr_overlay {
   position: fixed;
   top: 0;

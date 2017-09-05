@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './searchbar';
 import ArtistInfo from './artist_info';
+import AlbumList from './album_list';
 import _ from 'lodash';
 import axios from "axios";
 
@@ -18,7 +19,8 @@ export default class App extends Component {
     const params = this.getHashParams();
     if (params.access_token == undefined){
       const AUTHORIZATION_URL = "https://accounts.spotify.com/authorize";
-      const REDIRECT_URI = "http://localhost:8080";
+      // const REDIRECT_URI = "http://localhost:8080";
+      const REDIRECT_URI = "http://edsonjunior.io/react-spotify-example";
       window.location.href = `${AUTHORIZATION_URL}?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${REDIRECT_URI}`;
     }else{
       this.setState({access_token: params.access_token});
@@ -47,31 +49,10 @@ export default class App extends Component {
       this.setState({ albuns: response.data.items});
     });
   }
-  renderAlbumList(album){
-    return (
-      <div className="col-xs-12 col-sm-4 col-md-2">
-        <div className="row">
-          <div className="col-xs-12 album-item">
-            <div className="row">
-              <div className="col-xs-12">
-                <img src={_.first(album.images).url} className="img-responsive" />
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-xs-12">
-                <b>
-                  {album.name}
-                </b>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  
   render() {
     return (
-      <div className="container-fluid">
+      <div>
         <div className="row">
           <div className="col-xs-12">
             <SearchBar createRequest={this.createRequest.bind(this)} onItemClick={this.onItemClick.bind(this)}/>
@@ -83,7 +64,7 @@ export default class App extends Component {
           </div>
         </div>
         <div className="row albuns-list align-center">
-          {this.state.albuns.map(this.renderAlbumList)}
+          <AlbumList albuns={this.state.albuns}/>
         </div>
       </div>
     );

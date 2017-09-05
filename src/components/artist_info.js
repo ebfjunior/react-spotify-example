@@ -11,10 +11,10 @@ export default class ArtistInfo extends Component {
 
         return (
             <div className="col-xs-12 artist-info">
-                <div className="col-xs-12 col-md-2">
+                <div className="col-xs-12 col-sm-2">
                     <img src={_.first(artist.images).url} className="img-responsive"/>
                 </div>
-                <div className="col-xs-12 col-md-10">
+                <div className="col-xs-12 col-sm-10">
                     <div className="row">
                         <div className="col-xs-12">
                             <h4>
